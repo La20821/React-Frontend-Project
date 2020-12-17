@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Annie+Use+Your+Telescope&family=Open+Sans+Condensed:wght@300&family=Petit+Formal+Script&display=swap');
+
+.header {
+    /* height: 500px; */
+    height: auto;
+    min-height: 550px;
+    height: auto !important;
+    height: 30px;
+    width: 100%;
+    background-image: url("closet.jpg");
+    
+
+}
+
+h1 {
+    margin: 0;
+    padding: 0;
+    font-family: 'Amatic SC' ;
+
+}

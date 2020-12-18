@@ -4,6 +4,7 @@ The purpose of this the front end portion of this project is to use React.js to 
 
 ## Getting Started
 ### Wireframe
+![image](https://user-images.githubusercontent.com/68744076/102639362-8fa96600-411e-11eb-83b0-86eb6bdf8faf.png)
 
 ## Starting Steps
 1. I first created my react app and downloaded the neccessary dependencies. I, then set up my app.js along with entering the starter codes the main components I knew I would need for app functionality.

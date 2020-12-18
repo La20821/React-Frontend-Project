@@ -9,6 +9,7 @@ import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import Login from '../Login/Login';
 import SignUp from '../SignUp/SignUp';
+import ItemDetail from '../ItemDetail/ItemDetail'
 
 const backUrl = 'http://localhost:3000/api'
 // const [state, setState] = useState(initialState)
@@ -34,20 +35,25 @@ class App extends Component {
       })
     })
     
-    this.getItems()
+    //this.getItems()
   }
 
-  getItems = async () => {
-    const response = await axios(`${backUrl}/items/`)
+  // getItems = async () => {
+  //   const response = await axios(`${backUrl}/items/`)
 
-    this.setState({
-      items: response.data.items
-    })
-   console.log(response) 
-  }
+  //   this.setState({
+  //     items: response.data.items
+  //   })
+  //  console.log(response) 
+  // }
  
-  
-
+// Get User Profile Function
+  //userProfile = async () => {
+   // const response = await axios.get(`${backUrl}/users/profile/${this.props.params.user}`)
+  //}
+//  refreshPage = () => {
+//     window.location.reload(false)
+//   }
 
   
   
@@ -63,11 +69,22 @@ class App extends Component {
 
     })
     let data = response.data
+    
     console.log(data)
+    //this.userProfile()
+    //this.refreshPage()
+    this.setState({
+      items: response.data.item
+      
+      
+    })
+    
 
+    
     // this.findUser(this.state.user.id)
-    this.getItems()
-    //console.log(items)
+    //this.getItems()
+  
+   // console.log(items)
   
   }
 
@@ -115,6 +132,19 @@ class App extends Component {
       })
     }
 
+    editItem = async(event) => {
+      event.preventDefault()
+
+      let itemId = event.target.itemId.value
+
+      await axios.put(`${backUrl}/items/${itemId}`, {
+        name: event.target.name.value,
+        itemId: itemId
+      })
+
+      this.getItems()
+    }
+
 
   
 
@@ -159,6 +189,15 @@ class App extends Component {
           items={this.state.user.Items}
           deleteItem={this.deleteItem}
           
+          />}
+          />
+          <Route
+          exact
+          path ="/items/:id"
+          component={(routerProps) => <ItemDetail
+          {...routerProps} editItem = {(e) => this.editItem(e)}
+          items={this.state.user.Items}
+          editItem={this.editItem}
           />}
           />
         </main>

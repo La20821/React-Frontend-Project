@@ -14,39 +14,61 @@ const backUrl = 'http://localhost:3000/api'
 // const [state, setState] = useState(initialState)
 
 class App extends Component {
-  constructor() {
+  constructor(props) {
     super()
 
     this.state = {
-      users: [],
-      items: []
+      userId: null,
+      items: [],
+      user: {}
     }
     console.log(this.props)
     console.log(this.state)
   }
   
   componentDidMount = () => { 
+    axios.get(`${backUrl}/items`)
+    .then((response) => {
+      this.setState({
+        items: response.data.items
+      })
+    })
+    
     this.getItems()
   }
 
   getItems = async () => {
-    const response = await axios(`${backUrl}/:id/items`)
+    const response = await axios(`${backUrl}/items/`)
 
     this.setState({
-      items: response.data.allItems
+      items: response.data.items
     })
+   console.log(response) 
   }
+ 
+  
 
+
+  
   
 
   addItems = async (event) => {
     event.preventDefault()
 
-    await axios.post(`${backUrl}/:id/items`, {
-      type: event.target.type.value
-    })
+    console.log(event.target)
+    let response = await axios.post(`${backUrl}/items/newitem`, {
+      type: event.target.type.value,
+      color: event.target.color.value,
+      size: event.target.size.value
 
+    })
+    let data = response.data
+    console.log(data)
+
+    // this.findUser(this.state.user.id)
     this.getItems()
+    //console.log(items)
+  
   }
 
 
@@ -55,9 +77,46 @@ class App extends Component {
 
     await axios.delete(`${backUrl}/:id/${itemId}`)
 
-    this.getItems()
+    this.findUser(this.state.user.id)
   }
 
+  findUser = async (user) => {
+    console.log("findUser")
+    let res = await axios.get(`${backUrl}/users/profile/${user}`)
+  
+   this.setState({
+      userId: user,
+      user: res.data.user,
+      items: res.data.user.Items
+     
+      // Msg :"User credentials accepted"
+    }) 
+  }
+
+
+    signupUser = async (event) => {
+      console.log("signupUser")
+      let res2 = await axios.post(`${backUrl}/auth/profile/signup`, {
+      name: event.target.name.value,
+      username: event.target.username.value,
+      password: event.target.password.value
+    })
+
+    this.findUser(event)
+    }
+
+    logoutUser = async (event) => {
+      console.log("logoutUser")
+      await axios.get(`${backUrl}/auth/logout`)
+
+      this.setState({
+        loggedIn:false,
+        user:{}
+      })
+    }
+
+
+  
 
 
   render () {
@@ -78,12 +137,14 @@ class App extends Component {
           <Route 
           exact
           path="/Login"
-          component={()=> <Login/>}
+          component={(routerProps)=> <Login
+            {...routerProps} findUser ={(e) => this.findUser(e)} />}
           />
           <Route 
           exact
           path="/SignUp"
-          component={()=> <SignUp/>}
+          component={(routerProps)=> <SignUp
+          {...routerProps} signupUser= {(e) => this.signupUser(e)} />}
           />
           <Route
           exact
@@ -93,8 +154,9 @@ class App extends Component {
           <Route
           exact
           path="/items"
-          component={() => <Items items={this.state.items}
-          addItems={this.addItems}
+          component={(routerProps) => <Items 
+          {...routerProps} addItems ={(e) => this.addItems(e)}
+          items={this.state.user.Items}
           deleteItem={this.deleteItem}
           
           />}

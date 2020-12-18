@@ -19,8 +19,11 @@ input {
     font-size: 16px;
     margin: 4px 2px;
     cursor: pointer;
+    font-family: 'Annie Use Your Telescope';
+    font-weight: bold;
   }
 
-  h1 {
-      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  #login {
+      font-family: 'Open Sans Condensed';
+      
   }

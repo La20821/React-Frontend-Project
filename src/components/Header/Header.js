@@ -9,7 +9,7 @@ class Header extends Component{
                 <header className="header">
                     
                 </header>
-                <h1>Welcome to Your Digital Closet</h1>
+                <h1 id="header">Welcome to Your Digital Closet</h1>
             </div>
         )
     }

@@ -11,9 +11,16 @@ class HomePage extends Component {
     }
     render () {
         return (
-            <div>
+            <div class="home-background">
+                <div class="container">
+                    <div class="outer">
+                        <div class="details">
 
-                <h1>Where Creativity Meets Your Closet</h1>
+                        </div>
+                    </div>
+                </div>
+
+                <h1 id="home">Where Creativity Meets Your Closet</h1>
                 {/* <a href='/Login' class = "button">Log In</a><br/>  */}
                  <Link to ='/Login' class="button">Log In</Link><br/> 
                 

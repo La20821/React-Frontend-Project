@@ -1,70 +1,35 @@
-# Getting Started with Create React App
+# Purpose Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The purpose of this the front end portion of this project is to use React.js to build out neccessary components that contain the tasks of what we want to do with the data being stored on our back end API. React is responsible for the user Interface of what the client interacts with while visiting and maneuvering through the web page. In this project, I used React to build out components that would allow users to create and account and store the clothing items they would like to keep in their online digital closet. This app allows users to pick through their closet from wherever they are to decide what combination of items they would like to wear for any special occasion or event.  
 
-## Available Scripts
+## Getting Started
+### Wireframe
 
-In the project directory, you can run:
+## Starting Steps
+1. I first created my react app and downloaded the neccessary dependencies. I, then set up my app.js along with entering the starter codes the main components I knew I would need for app functionality.
+2. Second, I returned to my app. js to begin creating the functions required to provide functionality throughout the app between the backend data and front end components.
+3. Third, I passed in neccessary data through props inside of my componenets to render required API data. 
 
-### `npm start`
+## Componenents
+|**Components**| **Description**|
+|--------------|----------------|
+| Header       | Static information or images rendered at the top of page|
+| Footer       | Static information rendered at bottom of screen|
+| Sign Up      | Allows a new user to create an account|
+| Log In       | Allows an existing user to access their account|
+| Item         | Contains the stored data of the items previosly added as well as any new addtions to user closets|
+| Item Details | Displays the information for a single item|
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Technology Used
+* React
+* Heroku
+* Command Line
+* PG Admin
+* Visual Studio Code
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## App Guide/User Stories
+- As a user, I should be able log in to my account.
+- As a user, I should be able to add an item to my online closet.
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Issues
+The main issues I encountered while working with React was rendering the data I needed. It took me while to determine how to pass in that data correctly from my backend local port. 

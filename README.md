@@ -30,6 +30,10 @@ The purpose of this the front end portion of this project is to use React.js to 
 ## App Guide/User Stories
 - As a user, I should be able log in to my account.
 - As a user, I should be able to add an item to my online closet.
+- As a user, I should be able to create an account.
+- As a user, I should be able to edit an item. 
+- As a uesr, I should be able to delete an item.
+
 
 ## Issues
-The main issues I encountered while working with React was rendering the data I needed. It took me while to determine how to pass in that data correctly from my backend local port. 
+The main issues I encountered while working with React was rendering the data I needed. It took me while to determine how to pass in that data correctly from my backend local port. I learned alot about the interaction between Express and React and and had to spend some time ensuring that I understand how they both work together while not overlapping in responsibility. 
